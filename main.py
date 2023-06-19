@@ -4,7 +4,7 @@ from sympy import symbols,diff
 xx = symbols('x')
 
 
-func = input("Enter: ")
+func = input("Enter f(x): ")
 derivative_of_func = input("Enter f'(x): ")
 x1 = int(input("Let x1: "))
 iterations = int(input("Iterations: "))
