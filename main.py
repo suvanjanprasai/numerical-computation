@@ -16,7 +16,7 @@ if "^" in str(func):
     func = str(func).replace("^", "**")
 
 e = math.e
-functions = ["sin","cos","tan","log"]
+functions = ["sin","cos","tan"]
 for i in functions:
     if i in str(func):
         func = str(func).replace(f"{i}(x)", f"math.{i}(x*(math.pi)/(180))")
@@ -25,7 +25,8 @@ for i in functions:
     if i in str(derivative_of_func):
         derivative_of_func = str(derivative_of_func).replace(f"{i}(x)", f"math.{i}(x*(math.pi)/(180))")
 
-
+if "log" in str(func):
+    func = str(func).replace("log", f"math.log")
 x=x1
 for i in range(1,iterations):
     x2 = x1 - eval(str(func))/eval(str(derivative_of_func))
